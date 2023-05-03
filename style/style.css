@@ -5,6 +5,10 @@
     font-family: 'Lilita One', cursive;
 }
 
+html,body{
+    height: 2000px;
+}
+
 header{
     width: 100%;
     max-height: 100%;
@@ -17,6 +21,7 @@ header{
     background-repeat: repeat-x;
     border-bottom: 15px solid ;
     border-image: url(../img-person/white-wall.jpg) 30 round;
+    z-index: 99;
 }
 
 
@@ -32,7 +37,7 @@ header .logo{
     width:120px;
     height: 90px;
 
-    background-image: url(../img-person/logo-dev.png);
+    background-image: url(../img-person/logo-dev.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -46,6 +51,7 @@ header .motorcycle-header{
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
+    filter: drop-shadow(5px 5px 5px #ff1100);
     cursor: pointer;
 }
 
@@ -53,18 +59,25 @@ header nav #menu{
     display: flex;
     list-style-type: none;
     gap: 40px;
-
+    position: relative;
 }
 
 header nav #menu a{
     font-size:22px;
-    color: rgb(48, 3, 3);
-    padding: 10px;
-
+    color: #ca0808;
+    transition: .5s;
+    text-decoration: none;
 }
 header nav #menu a:hover{
     background: #ccc;
 
+}
+header nav #btn-mobile{
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border: 0;
+    display: none;
+   
 }
 
 /* ********************************** Statr sections ********************************* */
@@ -79,10 +92,11 @@ section.box-avenue{
     background: linear-gradient(75deg,#736464,#432f01);
     padding-top: 40px;
     perspective: 1000px;
-    overflow: hidden;
 
+    
     border-bottom:30px  solid ;
-    /* border-image: url(../img-person/white-wall.jpg) 30 round; */
+    border-image: url(../img-person/white-wall.jpg) 30 round;
+    overflow: hidden;
 }
 
 section.box-avenue .short-wall{
@@ -119,7 +133,6 @@ section.box-avenue .crosswalk span{
     width: 100%;
     height: 50px;
     background: #fff;
-   
 }
 
 section.box-avenue .retention-line{
@@ -166,14 +179,13 @@ section.box-avenue .motorcycle{
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
-
     animation:  move-motorcycle ease  15s ;
 }
 
 section.box-avenue .flower-bed{
     width: 100%;
     height: 100px;
-    /* background: red; */
+
 
     position: absolute;
     bottom: 0;
@@ -215,44 +227,45 @@ section.parking{
     width: 100%;
     height: 400px;
     background: #2c2b2b;
-    /* perspective: 1000px; */
     position: relative;
     bottom:  -110px;
+    perspective: 1000px;
+   
 }
 section.parking .box-car{
-   
     margin: 0 auto;
-    width: 80%;
+    max-width: 1200px;
     height: 100%;
-
-    /* background: gray; */
+    background: gray;
     display: flex;
-    /* justify-content: space-between; */
     gap: 100px;
 
-    /* transform: rotateX(60deg); */
+    perspective: 1000px;
+    transform: rotateX(60deg);
+    transform-origin: bottom;
+    position: relative;
+
 }
 
 section.parking .car-spaces{
     width: 400px;
     height: 400px;
-    /* background: #fff; */
     position: relative;
-    transform: rotateX(60deg);
     border: 10px solid yellow;
 
 }
 section.parking .car{
     width: 400px;
     height: 400px;
-    /* background: green; */
-    position: relative;
-    top: 0;
-
     background-image: url(../img-car/bmw-158703.svg);
     background-position: center;
-    background-size: contain;
-    background-repeat: no-repeat;   
+    /* background-size: cover; */
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+ 
+
+
     
 }
 
@@ -273,6 +286,63 @@ section.parking .car{
 
     100%{
         right: 120%;
+    }
+    
+}
+
+/* ********************************** Media Queries ********************************* */
+@media screen and (max-width:720px) {
+    header nav #btn-mobile{
+        display: flex;
+    }
+
+    header nav #menu{
+        flex-direction: column;
+        gap: 0;
+        height: 0;
+        width: 100%;
+        background: #130101; 
+        
+        background-image: url(../img-person/avatar-dev--01.png);
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        
+
+        position: absolute;
+        top: 110px;
+        left: 0;
+        visibility: hidden;
+        overflow: hidden;
+        transition: 1s;
+
+    }
+
+    header nav.active #menu{
+        display: block; 
+        height: 100vh; 
+        visibility: visible;
+        overflow: hidden;
+    }
+
+    header nav #menu a{
+        text-decoration: none;
+    
+    }
+    header nav #menu a:hover{
+        background: none;
+    }
+
+    header nav li{
+        border-bottom: 1px solid #bbbb;
+        padding: 1rem
+
+    }
+
+    header nav li:hover{
+       background: #bbbb;
+
     }
     
 }
