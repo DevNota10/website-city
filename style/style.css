@@ -1,51 +1,135 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Lilita One', cursive;
 }
 
-html,body{
-    height: 2000px;
-}
 
-header{
+
+ html {
+    /* height: 2000px; */
+    scroll-behavior: smooth;
+   
+}
+    
+    ::-webkit-scrollbar{
+        width: 15px;
+    }
+    ::-webkit-scrollbar-track{
+        background: red;
+    }
+    ::-webkit-scrollbar-thumb{
+        background: #fff;
+        border-radius: 20px;
+    }
+
+header {
     width: 100%;
     max-height: 100%;
-    padding: 5px 0;
-    position: fixed; 
-
-    background-image: url(../img-person/white-wall.jpg);
-    background-position: center;
-    background-size: contain;
-    background-repeat: repeat-x;
-    border-bottom: 15px solid ;
-    border-image: url(../img-person/white-wall.jpg) 30 round;
+    padding: 10px 0;
+    position: fixed;
     z-index: 99;
+    background: #000000;
+  
 }
 
-
-header .container{
-max-width: 1200px;
-padding: 0 2%;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
+.container {
+    max-width: 1400px;
+    padding: 0 2%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-header .logo{
-    width:120px;
+
+header .logo {
+    width: 120px;
     height: 90px;
 
-    background-image: url(../img-person/logo-dev.svg);
-    background-position: center;
+    background-image: url(../img-person/logo-dev.png);
+    background-position: center top 5px;
     background-size: contain;
     background-repeat: no-repeat;
+   
 }
-header .motorcycle-header{
+
+header nav #menu {
+    display: flex;
+    list-style-type: none;
+    gap: 40px;
+    position: relative;
+}
+
+header nav #menu a {
+    font-size: 22px;
+    color: #ca0808;
+    transition: .5s;
+    text-decoration: none;
+}
+
+header nav #menu a:hover {
+    background: #ccc;
+
+}
+
+header nav #btn-mobile {
+    padding: .5rem 1rem;
+    cursor: pointer;
+    border: 0;
+    display: none;
+
+}
+
+
+/* ********************************** Section Florest  ********************************* */
+.box-florest {
+
+    width: 100%;
+    height: 800px;
+    position: relative;
+    display: flex;
+    
+}
+
+.box-florest .img-florest{
+    width: 100%;
+  
+    background-position: center bottom ;
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+}
+.container-wall{
+    width: 100%;
+    height: 200px;
+    background-image: url(../img-person/white-wall.jpg);
+    background-size: contain;
+    background-repeat: repeat-x;
+         
+}
+.container-wall .wall{
+display: flex;
+justify-content: space-between;
+
+}
+.container-wall .grafite{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    width: 300px;
+    height: 200px;
+    font-size: 20px;
+    background: #eeebde8e;
+    text-align: center;
+    
+    font-family: 'Black Ops One', cursive;  
+}
+
+.motorcycle-wall {
     width: 150px;
     height: 100px;
-    /* background: red; */
 
     background-image: url(../img-motorcycle/motorcycle-svg-header.svg);
     background-position: center;
@@ -55,62 +139,35 @@ header .motorcycle-header{
     cursor: pointer;
 }
 
-header nav #menu{
-    display: flex;
-    list-style-type: none;
-    gap: 40px;
-    position: relative;
-}
 
-header nav #menu a{
-    font-size:22px;
-    color: #ca0808;
-    transition: .5s;
-    text-decoration: none;
-}
-header nav #menu a:hover{
-    background: #ccc;
-
-}
-header nav #btn-mobile{
-    padding: .5rem 1rem;
-    cursor: pointer;
-    border: 0;
-    display: none;
-   
-}
-
-/* ********************************** Statr sections ********************************* */
-
-section.box-avenue{
-    widows: 100%;
+section.box-avenue {
+    width: 100%;
     height: 400px;
 
     position: relative;
-    top: 125px;
-
-    background: linear-gradient(75deg,#736464,#432f01);
+ 
+    background: #2c2b2b;
     padding-top: 40px;
     perspective: 1000px;
 
-    
-    border-bottom:30px  solid ;
+    border-bottom: 20px solid;
     border-image: url(../img-person/white-wall.jpg) 30 round;
     overflow: hidden;
 }
 
-section.box-avenue .short-wall{
+section.box-avenue .short-wall {
     width: 100%;
-    height: 20px;
+    height: 10px;
 
     background-image: url(../img-person/white-wall.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-section.box-avenue .avenue{
+
+section.box-avenue .avenue {
     width: 100%;
-    height: 400px;
+    height: 100%;
     background: #2c2b2b;
 
     transform: rotateX(60deg);
@@ -118,24 +175,25 @@ section.box-avenue .avenue{
     top: -40px;
 }
 
-section.box-avenue .crosswalk{
+section.box-avenue .crosswalk {
     width: 400px;
     height: 400px;
 
     display: flex;
     flex-direction: column;
-    justify-content:space-around ;
+    justify-content: space-around;
     gap: 20px;
-    
+
 }
-section.box-avenue .crosswalk span{
+
+section.box-avenue .crosswalk span {
     display: block;
     width: 100%;
     height: 50px;
     background: #fff;
 }
 
-section.box-avenue .retention-line{
+section.box-avenue .retention-line {
     width: 400px;
     height: 100%;
 
@@ -143,23 +201,25 @@ section.box-avenue .retention-line{
     left: 450px;
     top: 0;
 
-    border-left: 30px solid #fff;
-    border-right: 30px solid #fff;
+    border-left: 20px solid #fff;
+    border-right: 20px solid #fff;
 }
-section.box-avenue .transit-line{
- width: 80%;
- height: 100%;
- background: #2c2b2b;
 
- display: flex;
- gap: 40px;
- align-items: center;
+section.box-avenue .transit-line {
+    width: 80%;
+    height: 100%;
+    background: #2c2b2b;
 
- position: absolute;
- top: 0;
- left: 900px;
+    display: flex;
+    gap: 40px;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 900px;
 }
-section.box-avenue .transit-line> span{
+
+section.box-avenue .transit-line>span {
     display: block;
     width: 100%;
     height: 10px;
@@ -167,10 +227,10 @@ section.box-avenue .transit-line> span{
 
 }
 
-section.box-avenue .motorcycle{
+section.box-avenue .motorcycle {
     width: 150px;
-    height: 110px;
-    right:20px ;
+    height: 90px;
+    right: 20px;
 
     position: absolute;
     z-index: 99;
@@ -178,14 +238,13 @@ section.box-avenue .motorcycle{
     background-image: url(../img-motorcycle/motorcycle-001.png);
     background-position: center;
     background-size: contain;
-    background-repeat: no-repeat;
-    animation:  move-motorcycle ease  15s ;
+    background-repeat: no-repeat;  
 }
 
-section.box-avenue .flower-bed{
+
+section.box-avenue .flower-bed {
     width: 100%;
     height: 100px;
-
 
     position: absolute;
     bottom: 0;
@@ -197,118 +256,123 @@ section.box-avenue .flower-bed{
     z-index: 99;
 }
 
-section.box-avenue .palm-trees{
-    width: 3000px;
+section.box-avenue .palm-trees {
+
+    min-width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     position: absolute;
-   
 }
 
-section.box-avenue .palm-trees .tree{
+section.box-avenue .palm-trees .palm-tree {
     width: 400px;
     height: 450px;
     flex: 1 1 200px;
     position: relative;
-   bottom: 80px;
+    bottom: 50px;
 
     background-image: url(../vegetations/palm-trees-308604.svg);
     background-position: center;
     background-size: contain;
     background-repeat: no-repeat;
 
+
     transform: rotate(45deg);
     z-index: 99;
 }
 
-/* ********************************** Animation motorcycle  ********************************* */
+/* ********************************** Section Parking  ********************************* */
 
-section.parking{
+section.parking {
     width: 100%;
-    height: 400px;
+    max-height: 100%;
     background: #2c2b2b;
     position: relative;
-    bottom:  -110px;
-    perspective: 1000px;
    
 }
-section.parking .box-car{
-    margin: 0 auto;
-    max-width: 1200px;
-    height: 100%;
-    background: gray;
+
+section.parking .container {
+    margin-bottom: 100px;
+    max-height: 100%;
     display: flex;
-    gap: 100px;
-
-    perspective: 1000px;
-    transform: rotateX(60deg);
-    transform-origin: bottom;
-    position: relative;
-
-}
-
-section.parking .car-spaces{
-    width: 400px;
-    height: 400px;
-    position: relative;
-    border: 10px solid yellow;
-
-}
-section.parking .car{
-    width: 400px;
-    height: 400px;
-    background-image: url(../img-car/bmw-158703.svg);
-    background-position: center;
-    /* background-size: cover; */
-
-    background-repeat: no-repeat;
-    background-attachment: fixed;
- 
-
-
+    justify-content: center;
+    align-items: center;
     
+    flex-wrap: wrap;
+    /* gap: 40px; */
+    background: #ccc;
+
 }
+
+section.parking .img-car {
+    height: 300px;
+    width: 300px;
+    flex: 1 1 300px;
+
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: .5s;
+    position: relative;
+
+}
+
+section.parking .img-car:hover {
+    filter: drop-shadow(5px 5px 5px #ff1100);
+}
+
+section.parking .text-car{
+    /* visibility: hidden; */
+    width: 300px;
+    height: 100px;
+    background: rgba(0, 128, 0, 0.402);
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+}
+
 
 /* ********************************** Animation motorcycle  ********************************* */
 
 @keyframes move-motorcycle {
-    0%{
+    0% {
         right: 20px;
     }
 
-    50%{
+    50% {
         right: 60%;
     }
 
-    80%{
+    80% {
         right: 60%;
     }
 
-    100%{
+    100% {
         right: 120%;
     }
-    
+
 }
 
 /* ********************************** Media Queries ********************************* */
 @media screen and (max-width:720px) {
-    header nav #btn-mobile{
+    header nav #btn-mobile {
         display: flex;
     }
 
-    header nav #menu{
+    header nav #menu {
         flex-direction: column;
         gap: 0;
         height: 0;
         width: 100%;
-        background: #130101; 
-        
+        background: #130101;
+
         background-image: url(../img-person/avatar-dev--01.png);
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
 
-        
 
         position: absolute;
         top: 110px;
@@ -319,30 +383,35 @@ section.parking .car{
 
     }
 
-    header nav.active #menu{
-        display: block; 
-        height: 100vh; 
+    header nav.active #menu {
+        display: block;
+        height: 100vh;
         visibility: visible;
         overflow: hidden;
     }
 
-    header nav #menu a{
+    header nav #menu a {
         text-decoration: none;
-    
+
     }
-    header nav #menu a:hover{
+
+    header nav #menu a:hover {
         background: none;
     }
 
-    header nav li{
+    header nav li {
         border-bottom: 1px solid #bbbb;
         padding: 1rem
+    }
+
+    header nav li:hover {
+        background: #bbbb;
 
     }
 
-    header nav li:hover{
-       background: #bbbb;
-
-    }
+    .container-wall .grafite:nth-child(4){
+       display: none;
     
+    }
+
 }
