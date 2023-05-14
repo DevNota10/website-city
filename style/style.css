@@ -7,17 +7,15 @@
 
 
 
- html {
-    /* height: 2000px; */
-    scroll-behavior: smooth;
-   
-}
+ /* html {
+    scroll-behavior: smooth; 
+} */
     
     ::-webkit-scrollbar{
         width: 15px;
     }
     ::-webkit-scrollbar-track{
-        background: red;
+        background: rgb(0, 238, 255);
     }
     ::-webkit-scrollbar-thumb{
         background: #fff;
@@ -95,7 +93,7 @@ header nav #btn-mobile {
 .box-florest .img-florest{
     width: 100%;
   
-    background-position: center bottom ;
+    background-position: center top ;
     background-size: cover;
     background-repeat: no-repeat; 
     background-attachment: fixed;
@@ -230,7 +228,7 @@ section.box-avenue .transit-line>span {
 section.box-avenue .motorcycle {
     width: 150px;
     height: 90px;
-    right: 20px;
+    right: -150px;
 
     position: absolute;
     z-index: 99;
@@ -288,19 +286,34 @@ section.parking {
     max-height: 100%;
     background: #2c2b2b;
     position: relative;
-   
+    perspective: 1000px;
+}
+
+section.parking > h1{
+
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    width: 100%;
+    height: 150px;
+    font-size: 100px;  
+    padding: 10px;
+    background: #f0cc03;
+    position: absolute;
+    top: -50px;
+    transform: rotateX(60deg);
+    overflow: hidden;
+    
+    
 }
 
 section.parking .container {
-    margin-bottom: 100px;
     max-height: 100%;
+
     display: flex;
     justify-content: center;
     align-items: center;
-    
-    flex-wrap: wrap;
-    /* gap: 40px; */
-    background: #ccc;
+    flex-wrap: wrap;  
+    gap: 30px;               
 
 }
 
@@ -323,34 +336,47 @@ section.parking .img-car:hover {
 }
 
 section.parking .text-car{
-    /* visibility: hidden; */
+
     width: 300px;
-    height: 100px;
-    background: rgba(0, 128, 0, 0.402);
+    height: 0px;
+
+    background: #e3c902;
     position: absolute;
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
+    opacity: 0;
+    transition: .5s;
 }
 
+section.parking .activeText{
+    height: 150px;
+    opacity: 1;
+    padding: 10px;
+    text-align: justify;
+}
+/* ********************************** Section Parking  ********************************* */
 
+
+section.contato{
+    width: 100%;
+    height: 700px;
+    background: #c41111;
+}
 /* ********************************** Animation motorcycle  ********************************* */
 
 @keyframes move-motorcycle {
     0% {
-        right: 20px;
+        right: -150px;
     }
 
     50% {
-        right: 60%;
+        right: 50%;
     }
 
-    80% {
-        right: 60%;
-    }
 
     100% {
-        right: 120%;
+        right: 150%;
     }
 
 }
