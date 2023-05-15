@@ -5,6 +5,9 @@
     font-family: 'Lilita One', cursive;
 }
 
+body{
+    height: 100%;
+}
 
 
  /* html {
@@ -293,7 +296,7 @@ section.parking > h1{
 
     text-align: center;
     font-family: 'Courier New', Courier, monospace;
-    width: 100%;
+    width: 90%;
     height: 150px;
     font-size: 100px;  
     padding: 10px;
@@ -302,18 +305,20 @@ section.parking > h1{
     top: -50px;
     transform: rotateX(60deg);
     overflow: hidden;
-    
-    
+    z-index: 99;
+  
 }
 
 section.parking .container {
     max-height: 100%;
-
+    padding: 10px 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;  
-    gap: 30px;               
+    gap: 30px;   
+    
+
 
 }
 
@@ -332,7 +337,7 @@ section.parking .img-car {
 }
 
 section.parking .img-car:hover {
-    filter: drop-shadow(5px 5px 5px #ff1100);
+    filter: drop-shadow(5px 5px 5px #a6ff00);
 }
 
 section.parking .text-car{
@@ -358,17 +363,51 @@ section.parking .activeText{
 /* ********************************** Section Parking  ********************************* */
 
 
-section.contato{
+section.square {
+
     width: 100%;
-    height: 700px;
-    background: #c41111;
+    height: 100%;
+    background: #f9f5f519;
+    perspective: 1000px;
+    /* perspective-origin: top; */
+    position: relative;
+/* 
+    background-image: url(../img-person/floor.svg); 
+    background-position: center  ;
+    background-size: cover;
+    background-repeat: repeat-x; */
+
+
+ 
 }
+
+section.square .floor{
+
+    background: #2c2b2b;
+    height: 1000px;
+    width: 100%;
+    transform: rotateX(60deg);
+
+    /* background-image: url(../img-person/floor.svg); 
+    background-position: center  ;
+    background-size: cover;
+    background-repeat: repeat-x;
+ background-attachment: fixed; 
+    position: relative; */
+    
+}
+
+
 /* ********************************** Animation motorcycle  ********************************* */
 
 @keyframes move-motorcycle {
     0% {
         right: -150px;
     }
+
+    /* 25%{
+        right: 10%;
+    } */
 
     50% {
         right: 50%;
